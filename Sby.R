@@ -4,9 +4,9 @@ options( survey.lonely.psu = "adjust" )
 
 f <- svydesign( ~1 , strata = ~cyl , weights = ~wt , data= mtcars )
 
-sby <- function(design, dep , ind, lvl = NULL){
+sby <- function(design , dep , ind , lvl = NULL){
   
-  # if lvl is null, takes the mean 
+  # if lvl is null, takes the mean, if not percent of that level
   # dep - what is the variable you want a mean of
   # ind - what is the grouping variable
   des <- get(design)
